@@ -1,0 +1,13 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(184, 184, 248);
+  border-top-right-radius: 5rem;
+
+  h4 {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+}

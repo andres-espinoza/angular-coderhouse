@@ -1,0 +1,13 @@
+@import '../../variables.scss';
+
+:host ::ng-deep {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  margin-top: $navbar-height;
+  min-height: calc(100vh - $navbar-height);
+
+  .sidebar, .main-content {
+    min-height: 100%;
+  }
+
+}
