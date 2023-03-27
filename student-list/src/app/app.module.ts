@@ -6,6 +6,7 @@ import { NavbarComponent } from './shared/ui/navbar/navbar.component';
 import { SidebarComponent } from './shared/ui/sidebar/sidebar.component';
 import { LayoutContainerComponent } from './shared/ui/layout-container/layout-container.component';
 import { MainContentComponent } from './shared/ui/main-content/main-content.component';
+import { StudentModule } from './student/student.module';
 
 @NgModule({
   declarations: [
@@ -15,10 +16,8 @@ import { MainContentComponent } from './shared/ui/main-content/main-content.comp
     LayoutContainerComponent,
     MainContentComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, StudentModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

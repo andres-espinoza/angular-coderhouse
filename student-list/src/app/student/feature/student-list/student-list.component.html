@@ -1,0 +1,24 @@
+<div *ngIf="loading; else studentTable">
+  <h4>Loading your request!</h4>
+</div>
+
+<ng-template #studentTable>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers ; let i=index" [ngClass]="i === 0 ? 'student-name-field' : undefined">
+          <h5>{{ header }}</h5>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td class="student-name-field">
+          <span>{{ student.getFullName() }}</span>
+        </td>
+        <td><span>{{ student.age }}</span></td>
+        <td><span>{{ student.isTopTen ? '🏆' : '🙈' }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
