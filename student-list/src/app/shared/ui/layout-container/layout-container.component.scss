@@ -6,7 +6,9 @@
   margin-top: $navbar-height;
   min-height: calc(100vh - $navbar-height);
 
-  .sidebar, .main-content {
+  aside,
+  main,
+  section {
     min-height: 100%;
   }
 
