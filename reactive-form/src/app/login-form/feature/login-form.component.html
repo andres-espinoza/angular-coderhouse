@@ -1,107 +1,96 @@
-<section
-  class="container-fluid vh-100 vw-100 d-flex flex-column justify-content-center align-items-center"
->
-  <form  [formGroup]="registerForm" (ngSubmit)="onSubmitForm()">
+<section class="container-fluid vh-100 vw-100 d-flex flex-column justify-content-center align-items-center">
+  <h4 class="mb-5">Register Form</h4>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmitForm()">
     <div class="mb-3">
-      <label
-        for="firstNameInput"
-        class="form-label"
-        >First Name</label
-      >
-      <input
-        [formControl]="firstNameControl"
-        [ngClass]="{
+      <label for="firstNameInput" class="form-label">First Name</label>
+      <input [formControl]="firstNameControl" [ngClass]="{
           'is-invalid': firstNameControl.touched && firstNameControl.invalid,
-          'is-valid':  firstNameControl.touched && firstNameControl.valid
-        }"
-        type="text"
-        class="form-control"
-        id="firstNameInput"
-      />
-    </div>
-
-    <div class="mb-3">
-      <label
-        for="lastNameInput"
-        class="form-label"
-        >Last Name</label
-      >
-      <input
-        [formControl]="lastNameControl"
-        [ngClass]="{
-          'is-invalid': lastNameControl.touched && lastNameControl.invalid,
-          'is-valid':  lastNameControl.touched && lastNameControl.valid
-        }"
-        type="text"
-        class="form-control"
-        id="lastNameInput"
-      />
-    </div>
-
-    <div class="mb-3">
-      <label
-        for="exampleInputEmail1"
-        class="form-label"
-        >Email address</label
-      >
-      <input
-        [formControl]="emailControl"
-        [ngClass]="{
-          'is-invalid': emailControl.touched && emailControl.invalid,
-          'is-valid':  emailControl.touched && emailControl.valid
-        }"
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-      />
-      <div
-        id="emailHelp"
-        class="form-text"
-      >
-        We'll never share your email with anyone else.
+          'is-valid': firstNameControl.touched && firstNameControl.valid
+        }" type="text" class="form-control" id="firstNameInput" />
+      <div *ngIf="firstNameControl.touched && firstNameControl.invalid" class="invalid-feedback">
+        {{
+        firstNameControl.hasError('required')
+        ? 'This field is required'
+        : firstNameControl.hasError('pattern')
+        ? 'At least 2 alphabetic characters'
+        : ''
+        }}
       </div>
     </div>
 
     <div class="mb-3">
-      <label
-        for="exampleInputPassword1"
-        class="form-label"
-        >Password</label
-      >
-      <input
-        [formControl]="passwordControl"
-        [ngClass]="{
-          'is-invalid': passwordControl.touched && passwordControl.invalid,
-          'is-valid':  passwordControl.touched && passwordControl.valid
-        }"
-        type="password"
-        class="form-control"
-        id="exampleInputPassword1"
-      />
-    </div>
-    <div class="mb-3 form-check d-flex flex-row justify-content-end align-items-center gap-2">
-      <input
-        [formControl]="termsAndConditionsControl"
-        [ngClass]="{
-          'is-invalid': termsAndConditionsControl.touched && termsAndConditionsControl.invalid,
-          'is-valid':  termsAndConditionsControl.touched && termsAndConditionsControl.valid
-        }"
-        type="checkbox"
-        class="form-check-input"
-        id="exampleCheck1"
-      />
-      <label
-        class="form-check-label"
-        for="exampleCheck1"
-        >I accept the terms & conditions</label
-      >
+      <label for="lastNameInput" class="form-label">Last Name</label>
+      <input [formControl]="lastNameControl" [ngClass]="{
+          'is-invalid': lastNameControl.touched && lastNameControl.invalid,
+          'is-valid': lastNameControl.touched && lastNameControl.valid
+        }" type="text" class="form-control" id="lastNameInput" />
+      <div *ngIf="lastNameControl.touched && lastNameControl.invalid" class="invalid-feedback">
+        {{
+        lastNameControl.hasError('required')
+        ? 'This field is required'
+        : lastNameControl.hasError('pattern')
+        ? 'Enter at least 2 alphabetic characters'
+        : ''
+        }}
+      </div>
     </div>
 
-    <button
-      type="submit"
-      class="btn btn-primary w-100"
-    >
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input [formControl]="emailControl" [ngClass]="{
+          'is-invalid': emailControl.touched && emailControl.invalid,
+          'is-valid': emailControl.touched && emailControl.valid
+        }" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+      <div *ngIf="emailControl.touched && emailControl.invalid" class="invalid-feedback">
+        {{
+        emailControl.hasError('required')
+        ? 'This field is required'
+        : emailControl.hasError('email')
+        ? 'The email adress is not valid'
+        : ''
+        }}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="passwordInput" class="form-label">Password
+      </label>
+      <div class="input-group flex-nowrap">
+        <span (click)="togglePasswordView()" class="input-group-text" id="eyeIconPassword"><i
+            [ngClass]="viewPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i></span>
+        <input [formControl]="passwordControl" [ngClass]="{
+            'is-invalid': passwordControl.touched && passwordControl.invalid,
+            'is-valid': passwordControl.touched && passwordControl.valid
+          }" class="form-control" id="passwordInput" [type]="viewPassword ? 'text' : 'password'" />
+      </div>
+      <div *ngIf="passwordControl.touched && passwordControl.invalid" class="invalid-feedback">
+        {{
+        passwordControl.hasError('required')
+        ? 'This field is required'
+        : passwordControl.hasError('minLength')
+        ? 'Enter at least 6 characters'
+        : ''
+        }}
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input [formControl]="termsAndConditionsControl" [ngClass]="{
+          'is-invalid':
+            termsAndConditionsControl.touched &&
+            termsAndConditionsControl.invalid,
+          'is-valid':
+            termsAndConditionsControl.touched && termsAndConditionsControl.valid
+        }" type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">I agree to the terms & conditions
+      </label>
+      <div *ngIf="
+          termsAndConditionsControl.touched && termsAndConditionsControl.invalid
+        " class="invalid-feedback">
+        Don't forget to accept the terms
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">
       Submit
     </button>
   </form>

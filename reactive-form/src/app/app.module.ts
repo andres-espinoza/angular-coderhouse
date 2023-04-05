@@ -10,5 +10,5 @@ import { LoginFormComponent } from './login-form/feature/login-form.component';
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
-}) 
+})
 export class AppModule {}

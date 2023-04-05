@@ -13,16 +13,23 @@ import { nameValidator } from 'src/app/shared/utils/regex/formValidators';
   styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent {
-  firstNameControl = new FormControl('', [Validators.required, Validators.pattern(nameValidator)]);
-  lastNameControl = new FormControl('', [Validators.required, Validators.pattern(nameValidator)]);
+  firstNameControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(nameValidator),
+  ]);
+  lastNameControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern(nameValidator),
+  ]);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   passwordControl = new FormControl('', [
     Validators.required,
-    Validators.min(6),
+    Validators.minLength(6),
   ]);
   termsAndConditionsControl = new FormControl(false, [Validators.requiredTrue]);
 
   registerForm: FormGroup;
+  viewPassword = false;
   constructor(public formBuilder: FormBuilder) {
     this.registerForm = this.formBuilder.group({
       firstName: this.firstNameControl,
@@ -42,6 +49,20 @@ export class LoginFormComponent {
         this.passwordControl,
         this.termsAndConditionsControl,
       ].forEach((control) => control.markAsTouched());
+    } else {
+      alert('Succesfully submited!');
+      [
+        this.firstNameControl,
+        this.lastNameControl,
+        this.emailControl,
+        this.passwordControl,
+        this.termsAndConditionsControl,
+      ].forEach((control) => control.reset());
     }
+  }
+
+  togglePasswordView() {
+    console.log('aaa');
+    this.viewPassword = !this.viewPassword;
   }
 }
