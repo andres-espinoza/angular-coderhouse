@@ -30,6 +30,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/font/index.scss",
+              "src/assets/styles/custom-theme.scss",
               "src/styles.scss"
             ],
             "scripts": []

@@ -1,0 +1,60 @@
+@use "sass:map";
+@use '@angular/material'as mat;
+@include mat.core();
+
+// * Colors
+$my-primary-color: (100 : #b8d4ec,
+  500 : #71a8d9,
+  700 : #5e97cf,
+  contrast: (100 : #000000,
+    500 : #000000,
+    700 : #000000,
+  ));
+
+$my-accent-color: (100 : #f9d28b,
+  500 : #f2a516,
+  700 : #ee9310,
+  contrast: (100 : #000000,
+    500 : #000000,
+    700 : #000000,
+  ));
+
+$my-warn-color: (100 : #f9a794,
+  500 : #f24e29,
+  700 : #ee3d1f,
+  contrast: (100 : #000000,
+    500 : #ffffff,
+    700 : #ffffff,
+  ));
+
+// * Palette
+$my-palette-primary: mat.define-palette($my-primary-color);
+$my-palette-accent: mat.define-palette($my-accent-color);
+$my-palette-warn: mat.define-palette($my-warn-color);
+
+// * Typography Levels
+// * heading-1
+
+$my-custom-h1-level: mat.define-typography-level($font-family: Belgant-Aesthetic,
+  $font-size: 6rem,
+  $line-height: 1,
+  $letter-spacing: 0.1em,
+);
+
+$my-custom-p-level: mat.define-typography-level($font-family: 'Poppins',
+  $font-size: 1.3rem,
+  $line-height: 1,
+  $letter-spacing: 0px,
+  $font-weight: 300);
+
+// * Typography Config
+$my-custom-typography-config: mat.define-typography-config($headline-5: $my-custom-h1-level, $body-2: $my-custom-p-level);
+
+// * Theme
+$my-theme: mat.define-light-theme((color: (primary: $my-palette-primary,
+      accent: $my-palette-accent,
+      warn: $my-palette-warn),
+    typography: $my-custom-typography-config));
+
+@include mat.typography-hierarchy($my-custom-typography-config);
+@include mat.all-component-themes($my-theme);
