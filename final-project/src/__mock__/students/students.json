@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "firstName": "Carlos",
+      "lastName": "Delgado",
+      "age": 25,
+      "isTopTen": false,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "Diego",
+      "lastName": "Rebolledo",
+      "age": 22,
+      "isTopTen": false,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "Camilo",
+      "lastName": "Fuentes",
+      "age": 23,
+      "isTopTen": false,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "Andrea",
+      "lastName": "Silva",
+      "age": 29,
+      "isTopTen": false,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "María del Carmen",
+      "lastName": "Andana",
+      "age": 25,
+      "isTopTen": false,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "Alejandra",
+      "lastName": "Gomez",
+      "age": 24,
+      "isTopTen": true,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "Ximena",
+      "lastName": "Sepúlveda",
+      "age": 24,
+      "isTopTen": false,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "Montserrat",
+      "lastName": "Montecinos",
+      "age": 24,
+      "isTopTen": false,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "Raúl",
+      "lastName": "Jiménez",
+      "age": 21,
+      "isTopTen": true,
+      "course": "Angular Avanzado"
+    },
+    {
+      "firstName": "Arturo",
+      "lastName": "Pérez",
+      "age": 30,
+      "isTopTen": false,
+      "course": "Angular Avanzado"
+    }
+  ]
+}
