@@ -11,6 +11,12 @@
       "options": {
         "parser": "angular"
       }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss"
+      }
     }
   ]
 }

@@ -7,7 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint --fix"
+    "lint:check": "ng lint",
+    "lint:fix": "ng lint --fix",
+    "prettier:check": "prettier -c ./src",
+    "prettier:fix": "prettier -w ./src",
+    "format": "npm run prettier:fix && npm run lint:fix"
   },
   "private": true,
   "dependencies": {

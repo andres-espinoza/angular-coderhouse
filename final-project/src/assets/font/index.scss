@@ -1,14 +1,14 @@
 @font-face {
   font-family: Belgant-Aesthetic;
-  src: url(./Belgant_Aesthetic.otf) format("opentype");
+  src: url(./Belgant_Aesthetic.otf) format('opentype');
 }
 
 // Use with 'd' character
 .salt-2 {
-  font-feature-settings: "salt"2;
+  font-feature-settings: 'salt' 2;
 }
 
 // Use with 'a' character
 .salt-3 {
-  font-feature-settings: "salt"3;
+  font-feature-settings: 'salt' 3;
 }
