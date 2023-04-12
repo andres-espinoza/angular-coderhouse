@@ -5,4 +5,5 @@ export interface Student {
   isTopTen: boolean;
   course: string;
   id: string;
+  score: number;
 }

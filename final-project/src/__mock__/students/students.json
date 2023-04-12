@@ -5,7 +5,8 @@
     "lastName": "Delgado",
     "age": 25,
     "isTopTen": false,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 7
   },
   {
     "id": "9db07d2e-0a8e-4954-a0cb-f344b7e5c13f",
@@ -13,7 +14,8 @@
     "lastName": "Rebolledo",
     "age": 22,
     "isTopTen": false,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 5.5
   },
   {
     "id": "3cd9e2bb-fd04-44ab-8446-f685cbd08d53",
@@ -21,7 +23,8 @@
     "lastName": "Fuentes",
     "age": 23,
     "isTopTen": false,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 3.5
   },
   {
     "id": "561f2390-8508-4bac-a270-7d7e4ca38245",
@@ -29,7 +32,8 @@
     "lastName": "Silva",
     "age": 29,
     "isTopTen": false,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 6
   },
   {
     "id": "58bf3d48-ac11-4852-b1ec-9adb5e9c882f",
@@ -37,7 +41,8 @@
     "lastName": "Andana",
     "age": 25,
     "isTopTen": false,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 6.5
   },
   {
     "id": "d9922351-9052-4233-824c-daa4deae254a",
@@ -45,7 +50,8 @@
     "lastName": "Gomez",
     "age": 24,
     "isTopTen": true,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 10
   },
   {
     "id": "000e58b3-da31-4595-bed0-9c84ad04a19e",
@@ -53,7 +59,8 @@
     "lastName": "Sepúlveda",
     "age": 24,
     "isTopTen": false,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 9
   },
   {
     "id": "717ff8aa-e925-4a97-9d26-0909cdaac30d",
@@ -61,7 +68,8 @@
     "lastName": "Montecinos",
     "age": 24,
     "isTopTen": false,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 8.5
   },
   {
     "id": "2a65d178-fa89-4ea6-b77f-fc15c7602c1b",
@@ -69,7 +77,8 @@
     "lastName": "Jiménez",
     "age": 21,
     "isTopTen": true,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 10
   },
   {
     "id": "f0b1e065-eb4f-4713-b1da-b0633c976a5a",
@@ -77,6 +86,7 @@
     "lastName": "Pérez",
     "age": 30,
     "isTopTen": false,
-    "course": "Angular"
+    "course": "Angular",
+    "score": 6.5
   }
 ]

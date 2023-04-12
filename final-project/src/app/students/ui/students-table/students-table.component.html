@@ -50,6 +50,22 @@
     </td>
   </ng-container>
 
+  <ng-container matColumnDef="score">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+    >
+      Puntaje
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let student"
+      class="center-text"
+    >
+      {{ student.score }}
+    </td>
+  </ng-container>
+
   <ng-container matColumnDef="isTopTen">
     <th
       mat-header-cell

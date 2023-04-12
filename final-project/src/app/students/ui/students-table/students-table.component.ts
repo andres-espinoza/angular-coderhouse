@@ -9,7 +9,13 @@ import studentsData from '../../../../__mock__/students/students.json';
 })
 export class StudentsTableComponent {
   dataTable: Student[];
-  displayedColumns: string[] = ['fullName', 'age', 'course', 'isTopTen'];
+  displayedColumns: string[] = [
+    'fullName',
+    'age',
+    'course',
+    'score',
+    'isTopTen',
+  ];
   constructor() {
     this.dataTable = studentsData;
   }
