@@ -1,0 +1,44 @@
+.mat-toolbar {
+  background-color: #fafafa;
+  border-right: 2px solid #71a8d9;
+  border-bottom: 2px solid #71a8d9;
+  border-end-end-radius: 1rem;
+}
+
+.mat-toolbar-single-row {
+  padding: 0px 2.5rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-text {
+  margin: auto 0px;
+}
+
+.menu-button {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  width: 24px;
+  height: 24px;
+  background-color: #fafafa;
+  cursor: default;
+  transition: all 500ms;
+  &:hover {
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: all 500ms;
+  }
+  .mat-icon {
+    transform: scale(1.5);
+    aspect-ratio: 1/2;
+    padding: 0px;
+    margin: 0px;
+  }
+}
