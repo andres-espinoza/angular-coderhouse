@@ -1,0 +1,76 @@
+<table
+  mat-table
+  [dataSource]="dataTable"
+  class="card-shape-pink-bg"
+>
+  <ng-container matColumnDef="fullName">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+    >
+      Nombre
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let student"
+    >
+      {{ [student.firstName, student.lastName] | fullName }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+    >
+      Edad
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let student"
+      class="center-text"
+    >
+      {{ student.age }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="course">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+    >
+      Curso
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let student"
+      class="center-text"
+    >
+      {{ student.course }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="isTopTen">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+    >
+      Top 10
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let student"
+      class="center-text"
+    >
+      {{ student.isTopTen ? '🏆' : '' }}
+    </td>
+  </ng-container>
+  <tr
+    mat-header-row
+    *matHeaderRowDef="displayedColumns"
+  ></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+  ></tr>
+</table>

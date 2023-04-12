@@ -4,4 +4,5 @@ export interface Student {
   age: number;
   isTopTen: boolean;
   course: string;
+  id: string;
 }
