@@ -1,21 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
 @import './assets/styles/custom-theme.scss';
 
 $primary-700: map-get($my-theme, color, primary, 700);
+$primary-500: map-get($my-theme, color, primary, 500);
 $accent-500: map-get($my-theme, color, accent, 500);
+$accent-700: map-get($my-theme, color, accent, 700);
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
 }
 
-h1 {
+.primary-color {
   color: $primary-700;
 }
 
-.secondary-text {
+.accent-color {
   color: $accent-500;
+}
+
+.bg-primary {
+  background-color: $primary-500;
+}
+
+.card-shape-pink-bg {
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: #F6D6CA 0px 0px 0px 2px inset, #f2c4b3 6px -6px 0px -2px,
+    #f2c4b3 6px -6px;
 }

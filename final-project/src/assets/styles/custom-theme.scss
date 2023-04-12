@@ -42,18 +42,24 @@ $my-palette-accent: mat.define-palette($my-accent-color);
 $my-palette-warn: mat.define-palette($my-warn-color);
 
 // * Typography Levels
-// * heading-1
 
 $my-custom-h1-level: mat.define-typography-level(
   $font-family: Belgant-Aesthetic,
-  $font-size: 6rem,
+  $font-size: 4.5rem,
+  $line-height: 1,
+  $letter-spacing: 0.1em,
+);
+
+$my-custom-h3-level: mat.define-typography-level(
+  $font-family: Belgant-Aesthetic,
+  $font-size: 2rem,
   $line-height: 1,
   $letter-spacing: 0.1em,
 );
 
 $my-custom-p-level: mat.define-typography-level(
   $font-family: 'Poppins',
-  $font-size: 1.3rem,
+  $font-size: 1rem,
   $line-height: 1,
   $letter-spacing: 0px,
   $font-weight: 300,
@@ -62,6 +68,7 @@ $my-custom-p-level: mat.define-typography-level(
 // * Typography Config
 $my-custom-typography-config: mat.define-typography-config(
   $headline-5: $my-custom-h1-level,
+  $subtitle-1: $my-custom-h3-level,
   $body-2: $my-custom-p-level,
 );
 
