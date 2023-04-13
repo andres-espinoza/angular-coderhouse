@@ -6,10 +6,10 @@ import { StudentDialogResult } from 'src/types/studentDialog';
 
 @Component({
   selector: 'app-students-layout',
-  templateUrl: './students-layout.component.html',
-  styleUrls: ['./students-layout.component.scss'],
+  templateUrl: './students-view.component.html',
+  styleUrls: ['./students-view.component.scss'],
 })
-export class StudentsLayoutComponent {
+export class StudentsViewComponent {
   studentsData: Student[] = studentsJSON;
 
   constructor(private _snackBar: MatSnackBar) {}

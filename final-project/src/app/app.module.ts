@@ -12,7 +12,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, MainContainerComponent, NavbarComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    MainContainerComponent,
+    NavbarComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

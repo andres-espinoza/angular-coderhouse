@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentsSectionTitleComponent } from './ui/students-section-title/students-section-title.component';
-import { StudentsLayoutComponent } from './ui/students-layout/students-layout.component';
+import { StudentsViewComponent } from './feature/students-layout/students-view.component';
 import { StudentsTableComponent } from './feature/students-table/students-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -20,7 +20,7 @@ import { StudentDialogComponent } from './feature/student-dialog/student-dialog.
 @NgModule({
   declarations: [
     StudentsSectionTitleComponent,
-    StudentsLayoutComponent,
+    StudentsViewComponent,
     StudentsTableComponent,
     FullNamePipe,
     StudentsFormComponent,
@@ -41,7 +41,7 @@ import { StudentDialogComponent } from './feature/student-dialog/student-dialog.
   ],
   exports: [
     StudentsSectionTitleComponent,
-    StudentsLayoutComponent,
+    StudentsViewComponent,
     StudentsTableComponent,
   ],
 })
