@@ -1,8 +1,13 @@
 <div class="layout">
   <section>
     <app-students-section-title />
+    <p>
+      Para agregar a un nuevo estudiante solo debes completar el formulario a
+      continuación:
+    </p>
+    <app-students-form (newStudentEvent)="addStudent($event)" />
   </section>
   <main>
-    <app-students-table />
+    <app-students-table [data]="studentsData" />
   </main>
 </div>
