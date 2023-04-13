@@ -8,6 +8,9 @@
     <app-students-form (newStudentEvent)="addStudent($event)" />
   </section>
   <main>
-    <app-students-table [data]="studentsData" />
+    <app-students-table
+      [data]="studentsData"
+      (modifyStudent)="modifyStudent($event)"
+    />
   </main>
 </div>
