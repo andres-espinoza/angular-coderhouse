@@ -10,10 +10,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { FullNamePipe } from './utils/full-name.pipe';
 import { StudentsFormComponent } from './feature/students-form/students-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { StudentDialogComponent } from './feature/student-dialog/student-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { SharedModule } from '../shared/shared.module';
     StudentsTableComponent,
     FullNamePipe,
     StudentsFormComponent,
+    StudentDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +35,7 @@ import { SharedModule } from '../shared/shared.module';
     MatButtonModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatTooltipModule,
     ReactiveFormsModule,
     SharedModule,
   ],
