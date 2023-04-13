@@ -3,7 +3,6 @@ export interface Student {
   lastName: string;
   age: number;
   isTopTen: boolean;
-  course: string;
   id: string;
   score: number;
 }
