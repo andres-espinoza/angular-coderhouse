@@ -1,15 +1,20 @@
 import {
   AfterViewInit,
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
 import { Student } from 'src/types/student';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { StudentDialogComponent } from '../student-dialog/student-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { StudentDialogResult } from 'src/types/studentDialog';
 
 @Component({
   selector: 'app-students-table',
@@ -20,16 +25,16 @@ export class StudentsTableComponent
   implements OnInit, AfterViewInit, OnChanges
 {
   @Input() data: Student[] = [];
+  @ViewChild(MatSort, { static: false }) sort!: MatSort;
+  @Output() modifyStudent = new EventEmitter<StudentDialogResult>();
 
   dataSource: MatTableDataSource<Student>;
 
   displayedColumns: string[] = ['id', 'fullName', 'age', 'score', 'isTopTen'];
 
-  constructor() {
+  constructor(private matDialog: MatDialog) {
     this.dataSource = new MatTableDataSource(this.data);
   }
-
-  @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   setDataSourceSort() {
     this.dataSource.sort = this.sort;
@@ -45,6 +50,19 @@ export class StudentsTableComponent
     };
   }
 
+  openDialog(row: Student): void {
+    const dialogRef = this.matDialog.open(StudentDialogComponent, {
+      data: row,
+    });
+    dialogRef.afterClosed().subscribe((result: StudentDialogResult) => {
+      this.modifyStudent.emit(result);
+    });
+  }
+
+  generateToolTip(row: Student): string {
+    return `Modificar el registro de ${row.firstName}`;
+  }
+
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.data);
   }
@@ -54,7 +72,8 @@ export class StudentsTableComponent
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.dataSource = new MatTableDataSource(changes['data'].currentValue);
+    this.data = changes['data'].currentValue;
+    this.dataSource = new MatTableDataSource(this.data);
     this.setDataSourceSort();
   }
 }

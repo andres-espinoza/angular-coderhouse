@@ -96,5 +96,9 @@
   <tr
     mat-row
     *matRowDef="let row; columns: displayedColumns"
-  ></tr>
+    (click)="openDialog(row)"
+    [matTooltip]="generateToolTip(row)"
+  >
+    >
+  </tr>
 </table>

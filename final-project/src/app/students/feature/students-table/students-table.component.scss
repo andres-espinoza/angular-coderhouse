@@ -5,6 +5,12 @@
   border-bottom-color: #b8d4ec;
 }
 
+.mat-mdc-row {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .center-text {
   text-align: center;
 }
