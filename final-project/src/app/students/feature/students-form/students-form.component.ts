@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyErrorStateMatcher } from 'src/app/shared/utils/CustomErrorStateMatcher';
+import { capitalizeText } from 'src/app/shared/utils/stringFormat';
 import { Student } from 'src/types/student';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -62,8 +63,9 @@ export class StudentsFormComponent {
         >),
         id: uuidv4().split('-')[0],
         isTopTen: false,
+        firstName: capitalizeText(this.firstNameControl.value as string),
+        lastName: capitalizeText(this.lastNameControl.value as string),
       });
-
       this.controls.forEach((control) => {
         control.reset();
       });
