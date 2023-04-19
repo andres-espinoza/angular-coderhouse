@@ -1,0 +1,82 @@
+[
+  {
+    "id": "7348d73e",
+    "firstName": "Carlos",
+    "lastName": "Delgado",
+    "age": 25,
+    "isTopTen": false,
+    "score": 7
+  },
+  {
+    "id": "9db07d2e",
+    "firstName": "Diego",
+    "lastName": "Rebolledo",
+    "age": 22,
+    "isTopTen": false,
+    "score": 5.5
+  },
+  {
+    "id": "3cd9e2bb",
+    "firstName": "Camilo",
+    "lastName": "Fuentes",
+    "age": 23,
+    "isTopTen": false,
+    "score": 3.5
+  },
+  {
+    "id": "561f2390",
+    "firstName": "Andrea",
+    "lastName": "Silva",
+    "age": 29,
+    "isTopTen": false,
+    "score": 6
+  },
+  {
+    "id": "58bf3d48",
+    "firstName": "María del Carmen",
+    "lastName": "Andana",
+    "age": 25,
+    "isTopTen": false,
+    "score": 6.5
+  },
+  {
+    "id": "d9922351",
+    "firstName": "Alejandra",
+    "lastName": "Gomez",
+    "age": 24,
+    "isTopTen": true,
+    "score": 10
+  },
+  {
+    "id": "000e58b3",
+    "firstName": "Ximena",
+    "lastName": "Sepúlveda",
+    "age": 24,
+    "isTopTen": false,
+    "score": 9
+  },
+  {
+    "id": "717ff8aa",
+    "firstName": "Montserrat",
+    "lastName": "Montecinos",
+    "age": 24,
+    "isTopTen": false,
+    "score": 8.5
+  },
+  {
+    "id": "2a65d178",
+    "firstName": "Raúl",
+    "lastName": "Jiménez",
+    "age": 21,
+    "isTopTen": true,
+    "score": 10
+  },
+  {
+    "id": "f0b1e065",
+    "firstName": "Arturo",
+    "lastName": "Pérez",
+    "age": 30,
+    "isTopTen": false,
+    "score": 6.5
+  }
+]

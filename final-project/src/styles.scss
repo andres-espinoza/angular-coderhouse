@@ -1,0 +1,68 @@
+@import './assets/styles/custom-theme.scss';
+
+:root {
+  --success-color: #5e97cf;
+}
+
+$primary-700: map-get($my-theme, color, primary, 700);
+$primary-500: map-get($my-theme, color, primary, 500);
+$accent-500: map-get($my-theme, color, accent, 500);
+$accent-700: map-get($my-theme, color, accent, 700);
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.primary-color {
+  color: $primary-700;
+}
+
+.accent-color {
+  color: $accent-500;
+}
+
+.bg-primary {
+  background-color: $primary-500 !important;
+}
+
+.card-shape-pink-bg {
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: #f6d6ca 0px 0px 0px 2px inset, #f2c4b3 6px -6px 0px -2px,
+    #f2c4b3 6px -6px;
+}
+
+.custom-btn {
+  font-family: 'Poppins', sans-serif;
+  color: #fff !important;
+  width: 100%;
+}
+
+.success-snackbar {
+  color: white;
+  --mdc-snackbar-container-color: var(--success-color);
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+// * Override styles input types
+// Chrome, Safari, Edge, Opera
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Firefox
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

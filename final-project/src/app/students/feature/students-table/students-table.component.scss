@@ -1,0 +1,16 @@
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #b8d4ec;
+}
+
+.mat-mdc-row {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.center-text {
+  text-align: center;
+}
