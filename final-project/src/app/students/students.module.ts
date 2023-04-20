@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentsSectionTitleComponent } from './ui/students-section-title/students-section-title.component';
-import { StudentsViewComponent } from './feature/students-layout/students-view.component';
+import { StudentsViewComponent } from './feature/students-view/students-view.component';
 import { StudentsTableComponent } from './feature/students-table/students-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FullNamePipe } from './utils/full-name.pipe';
 import { StudentsFormComponent } from './feature/students-form/students-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -36,6 +37,7 @@ import { StudentDialogComponent } from './feature/student-dialog/student-dialog.
     MatDialogModule,
     MatSnackBarModule,
     MatTooltipModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule,
     SharedModule,
   ],
