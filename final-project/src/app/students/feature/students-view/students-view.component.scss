@@ -1,6 +1,7 @@
 .layout {
   display: grid;
   grid-template-columns: 50% 50%;
+  min-height: 100%;
 
   section,
   main {

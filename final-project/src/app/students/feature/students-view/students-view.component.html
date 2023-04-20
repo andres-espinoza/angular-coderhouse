@@ -1,0 +1,22 @@
+<div class="layout">
+  <section>
+    <app-students-section-title />
+    <p>
+      Para agregar a un nuevo estudiante solo debes completar el formulario a
+      continuación:
+    </p>
+    <app-students-form (newStudentEvent)="addStudent($event)" />
+  </section>
+  <main>
+    <section *ngIf="isLoading; else studentsTable">
+      <p>La lista de estudiantes se está cargando</p>
+      <mat-spinner></mat-spinner>
+    </section>
+    <ng-template #studentsTable>
+      <app-students-table
+        [data]="studentsData"
+        (modifyStudent)="modifyStudent($event)"
+      />
+    </ng-template>
+  </main>
+</div>

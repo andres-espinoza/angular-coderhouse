@@ -1,18 +1,30 @@
-import { Component } from '@angular/core';
-import studentsJSON from '../../../../__mock__/students/students.json';
+import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/types/student';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { StudentDialogResult } from 'src/types/studentDialog';
+import { StudentsService } from '../../data-access/students.service';
 
 @Component({
-  selector: 'app-students-layout',
+  selector: 'app-students-view',
   templateUrl: './students-view.component.html',
   styleUrls: ['./students-view.component.scss'],
 })
-export class StudentsViewComponent {
-  studentsData: Student[] = studentsJSON;
+export class StudentsViewComponent implements OnInit {
+  studentsData: Student[] = [];
+  isLoading = true;
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(
+    private _snackBar: MatSnackBar,
+    private studentsService: StudentsService
+  ) {}
+
+  ngOnInit(): void {
+    this.studentsService.getMockStudents().subscribe({
+      next: (students) => (this.studentsData = students),
+      error: (error) => this.openSnackBar(error),
+      complete: () => (this.isLoading = false),
+    });
+  }
 
   openSnackBar(message: string, action?: string) {
     this._snackBar.open(message, action, {
