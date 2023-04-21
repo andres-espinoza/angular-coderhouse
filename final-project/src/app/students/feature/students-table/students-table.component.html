@@ -1,6 +1,7 @@
 <table
   mat-table
-  [dataSource]="dataSource"
+  *ngIf="matTableDataSource$ | async as students"
+  [dataSource]="students"
   matSort
   class="card-shape-pink-bg"
   matSortActive="score"
