@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyErrorStateMatcher } from 'src/app/shared/utils/CustomErrorStateMatcher';
 import { capitalizeText } from 'src/app/shared/utils/stringFormat';
 import { Student } from 'src/types/student';
 import { v4 as uuidv4 } from 'uuid';
+import { StudentService } from '../../data-access/student.service';
 
 @Component({
   selector: 'app-students-form',
@@ -46,17 +47,12 @@ export class StudentsFormComponent {
     this.scoreControl,
   ];
 
-  @Output() newStudentEvent = new EventEmitter<Student>();
+  constructor(private studentsService: StudentService) {}
+  // @Output() newStudentEvent = new EventEmitter<Student>();
 
   submitForm() {
     if (this.studentForm.valid) {
-      console.log('student submitted: ', {
-        ...this.studentForm.value,
-        id: uuidv4().split('-')[0],
-        isTopTen: false,
-      });
-
-      this.newStudentEvent.emit({
+      this.studentsService.createNewStudent({
         ...(this.studentForm.value as unknown as Omit<
           Student,
           'id' | 'isTopTen'
