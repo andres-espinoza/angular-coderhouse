@@ -1,0 +1,59 @@
+<div class="login-container">
+  <h1 class="mat-h1 primary-color login-form-title">
+    <!-- Estu<span class="accent-color"
+      ><span class="salt-3">d</span>i<span class="salt-2">a</span></span
+    >ntes -->
+    Bienvenido
+  </h1>
+
+  <form
+    [formGroup]="loginForm"
+    class="input-wrapper"
+  >
+    <!-- User Name -->
+    <mat-form-field
+      appearance="fill"
+      class="input-login-form"
+    >
+      <mat-label>Usuario</mat-label>
+      <input
+        [formControl]="userNameControl"
+        matInput
+      />
+      <mat-error>{{
+        userNameControl.errors | formControlErrorMessages
+      }}</mat-error>
+    </mat-form-field>
+
+    <!-- Password -->
+    <mat-form-field
+      appearance="fill"
+      class="input-login-form"
+    >
+      <mat-label>Contraseña</mat-label>
+      <input
+        [formControl]="passwordControl"
+        matInput
+      />
+      <mat-error>{{
+        passwordControl.errors | formControlErrorMessages
+      }}</mat-error>
+    </mat-form-field>
+    <button
+      mat-flat-button
+      color="primary"
+      class="custom-btn btn"
+      (click)="handleSignIn()"
+    >
+      Iniciar Sesión
+    </button>
+    <button
+      mat-flat-button
+      color="accent"
+      class="custom-btn btn"
+      (click)="handleSignUp()"
+    >
+      Registrarme
+    </button>
+  </form>
+</div>
