@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './footer/footer.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
     StudentsModule,
     MatToolbarModule,
     MatIconModule,
+    LoginModule,
   ],
   providers: [
     {
