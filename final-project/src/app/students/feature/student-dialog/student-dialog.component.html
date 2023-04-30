@@ -1,66 +1,63 @@
 <h1 mat-dialog-title>Modal de Modificación ✍</h1>
 <div mat-dialog-content>
-  <form [formGroup]="studentDialogForm">
-    <div class="input-wrapper">
-      <!-- first name -->
-      <mat-form-field appearance="fill">
-        <mat-label>Nombre</mat-label>
-        <input
-          [formControl]="firstNameControl"
-          [errorStateMatcher]="matcher"
-          matInput
-        />
-        <mat-error>{{
-          firstNameControl.errors | formControlErrorMessages
-        }}</mat-error>
-      </mat-form-field>
-      <!-- last name -->
-      <mat-form-field appearance="fill">
-        <mat-label>Apellido</mat-label>
-        <input
-          [formControl]="lastNameControl"
-          [errorStateMatcher]="matcher"
-          matInput
-        />
-        <mat-error>{{
-          lastNameControl.errors | formControlErrorMessages
-        }}</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="input-wrapper">
-      <!-- age -->
-      <mat-form-field appearance="fill">
-        <mat-label>Edad</mat-label>
-        <input
-          [formControl]="ageControl"
-          [errorStateMatcher]="matcher"
-          matInput
-          type="number"
-        />
-        <mat-error>{{
-          ageControl.errors | formControlErrorMessages
-        }}</mat-error>
-      </mat-form-field>
-      <!-- score -->
-      <mat-form-field appearance="fill">
-        <mat-label>Puntaje</mat-label>
-        <input
-          [formControl]="scoreControl"
-          [errorStateMatcher]="matcher"
-          matInput
-          type="number"
-        />
-        <mat-error>{{
-          scoreControl.errors | formControlErrorMessages
-        }}</mat-error>
-      </mat-form-field>
-    </div>
+  <form
+    [formGroup]="studentDialogForm"
+    class="input-wrapper"
+  >
+    <!-- first name -->
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input
+        [formControl]="firstNameControl"
+        [errorStateMatcher]="matcher"
+        matInput
+      />
+      <mat-error>{{
+        firstNameControl.errors | formControlErrorMessages
+      }}</mat-error>
+    </mat-form-field>
+    <!-- last name -->
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input
+        [formControl]="lastNameControl"
+        [errorStateMatcher]="matcher"
+        matInput
+      />
+      <mat-error>{{
+        lastNameControl.errors | formControlErrorMessages
+      }}</mat-error>
+    </mat-form-field>
+    <!-- age -->
+    <mat-form-field appearance="fill">
+      <mat-label>Edad</mat-label>
+      <input
+        [formControl]="ageControl"
+        [errorStateMatcher]="matcher"
+        matInput
+        type="number"
+      />
+      <mat-error>{{ ageControl.errors | formControlErrorMessages }}</mat-error>
+    </mat-form-field>
+    <!-- score -->
+    <mat-form-field appearance="fill">
+      <mat-label>Puntaje</mat-label>
+      <input
+        [formControl]="scoreControl"
+        [errorStateMatcher]="matcher"
+        matInput
+        type="number"
+      />
+      <mat-error>{{
+        scoreControl.errors | formControlErrorMessages
+      }}</mat-error>
+    </mat-form-field>
 
-    <div class="input-wrapper">
+    <div class="btn-wrapper">
       <button
         mat-flat-button
         color="warn"
-        class="custom-btn"
+        class="custom-btn btn"
         (click)="handleSubmit('DELETE')"
       >
         Dar de baja
@@ -68,7 +65,7 @@
       <button
         mat-flat-button
         color="primary"
-        class="custom-btn"
+        class="custom-btn btn"
         (click)="handleSubmit('MODIFY')"
       >
         Modificar
