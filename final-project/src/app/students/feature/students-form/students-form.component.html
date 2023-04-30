@@ -1,59 +1,66 @@
 <form
   [formGroup]="studentForm"
   (ngSubmit)="submitForm()"
+  class="input-wrapper"
 >
-  <div class="input-wrapper">
-    <!-- first name -->
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input
-        [formControl]="firstNameControl"
-        [errorStateMatcher]="matcher"
-        matInput
-      />
-      <mat-error>{{
-        firstNameControl.errors | formControlErrorMessages
-      }}</mat-error>
-    </mat-form-field>
-    <!-- last name -->
-    <mat-form-field appearance="fill">
-      <mat-label>Apellido</mat-label>
-      <input
-        [formControl]="lastNameControl"
-        [errorStateMatcher]="matcher"
-        matInput
-      />
-      <mat-error>{{
-        lastNameControl.errors | formControlErrorMessages
-      }}</mat-error>
-    </mat-form-field>
-  </div>
-  <div class="input-wrapper">
-    <!-- age -->
-    <mat-form-field appearance="fill">
-      <mat-label>Edad</mat-label>
-      <input
-        [formControl]="ageControl"
-        [errorStateMatcher]="matcher"
-        matInput
-        type="number"
-      />
-      <mat-error>{{ ageControl.errors | formControlErrorMessages }}</mat-error>
-    </mat-form-field>
-    <!-- score -->
-    <mat-form-field appearance="fill">
-      <mat-label>Puntaje</mat-label>
-      <input
-        [formControl]="scoreControl"
-        [errorStateMatcher]="matcher"
-        matInput
-        type="number"
-      />
-      <mat-error>{{
-        scoreControl.errors | formControlErrorMessages
-      }}</mat-error>
-    </mat-form-field>
-  </div>
+  <!-- first name -->
+  <mat-form-field
+    appearance="fill"
+    class="student-input"
+  >
+    <mat-label>Nombre</mat-label>
+    <input
+      [formControl]="firstNameControl"
+      [errorStateMatcher]="matcher"
+      matInput
+    />
+    <mat-error>{{
+      firstNameControl.errors | formControlErrorMessages
+    }}</mat-error>
+  </mat-form-field>
+  <!-- last name -->
+  <mat-form-field
+    appearance="fill"
+    class="student-input"
+  >
+    <mat-label>Apellido</mat-label>
+    <input
+      [formControl]="lastNameControl"
+      [errorStateMatcher]="matcher"
+      matInput
+    />
+    <mat-error>{{
+      lastNameControl.errors | formControlErrorMessages
+    }}</mat-error>
+  </mat-form-field>
+  <!-- age -->
+  <mat-form-field
+    appearance="fill"
+    class="student-input"
+  >
+    <mat-label>Edad</mat-label>
+    <input
+      [formControl]="ageControl"
+      [errorStateMatcher]="matcher"
+      matInput
+      type="number"
+    />
+    <mat-error>{{ ageControl.errors | formControlErrorMessages }}</mat-error>
+  </mat-form-field>
+  <!-- score -->
+  <mat-form-field
+    appearance="fill"
+    class="student-input"
+  >
+    <mat-label>Puntaje</mat-label>
+    <input
+      [formControl]="scoreControl"
+      [errorStateMatcher]="matcher"
+      matInput
+      type="number"
+    />
+    <mat-error>{{ scoreControl.errors | formControlErrorMessages }}</mat-error>
+  </mat-form-field>
 
   <button
     mat-flat-button
