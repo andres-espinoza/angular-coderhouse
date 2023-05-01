@@ -6,10 +6,10 @@ import { AppUser } from 'src/types/appUser';
 
 @Component({
   selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss'],
+  templateUrl: './sign-in-form.component.html',
+  styleUrls: ['./sign-in-form.component.scss'],
 })
-export class LoginFormComponent {
+export class SignInFormComponent {
   userNameControl = new FormControl('', [
     Validators.required,
     Validators.minLength(2),
@@ -20,7 +20,7 @@ export class LoginFormComponent {
   ]);
   controls = [this.userNameControl, this.passwordControl];
 
-  loginForm = new FormGroup({
+  signInForm = new FormGroup({
     userName: this.userNameControl,
     password: this.passwordControl,
   });
@@ -30,7 +30,7 @@ export class LoginFormComponent {
   constructor(private authService: AuthService) {}
 
   handleSignIn() {
-    if (this.loginForm.valid) {
+    if (this.signInForm.valid) {
       const a = this.authService.signIn({
         userName: this.userNameControl.value as string,
         password: this.passwordControl.value as string,

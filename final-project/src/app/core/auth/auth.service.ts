@@ -112,4 +112,8 @@ export class AuthService {
   appUserObservable(): Observable<AppUser | null> {
     return this.appUser$.asObservable();
   }
+
+  appUser(): AppUser | null {
+    return this.appUser$.value;
+  }
 }
