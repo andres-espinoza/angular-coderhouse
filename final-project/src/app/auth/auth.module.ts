@@ -5,17 +5,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SignUpFormComponent } from './feature/sign-up-form/sign-up-form.component';
 
 @NgModule({
-  declarations: [SignInFormComponent],
+  declarations: [SignInFormComponent, SignUpFormComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
+    MatSnackBarModule,
   ],
 })
-export class LoginModule {}
+export class AuthModule {}

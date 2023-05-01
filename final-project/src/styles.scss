@@ -2,6 +2,7 @@
 
 :root {
   --success-color: #5e97cf;
+  --error-color: #ee3d1f;
 }
 
 $primary-700: map-get($my-theme, color, primary, 700);
@@ -51,6 +52,15 @@ body {
 .success-snackbar {
   color: white;
   --mdc-snackbar-container-color: var(--success-color);
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.error-snackbar {
+  color: white;
+  --mdc-snackbar-container-color: var(--error-color);
 
   .mat-simple-snackbar-action {
     color: white;

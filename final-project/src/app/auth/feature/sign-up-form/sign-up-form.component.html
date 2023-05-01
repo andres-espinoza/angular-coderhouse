@@ -1,0 +1,69 @@
+<div class="login-container">
+  <h1 class="mat-h1 primary-color login-form-title">
+    <!-- Estu<span class="accent-color"
+      ><span class="salt-3">d</span>i<span class="salt-2">a</span></span
+    >ntes -->
+    Registro
+  </h1>
+
+  <form
+    [formGroup]="signUpForm"
+    class="input-wrapper"
+  >
+    <!-- User Name -->
+    <mat-form-field
+      appearance="fill"
+      class="input-login-form"
+    >
+      <mat-label>Usuario</mat-label>
+      <input
+        [formControl]="userNameControl"
+        matInput
+      />
+      <mat-error>{{
+        userNameControl.errors | formControlErrorMessages
+      }}</mat-error>
+    </mat-form-field>
+
+    <!-- Password -->
+    <mat-form-field
+      appearance="fill"
+      class="input-login-form"
+    >
+      <mat-label>Contraseña</mat-label>
+      <input
+        [formControl]="passwordControl"
+        matInput
+      />
+      <mat-error>{{
+        passwordControl.errors | formControlErrorMessages
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field
+      appearance="fill"
+      class="input-login-form"
+    >
+      <mat-label>Tipo de usuario</mat-label>
+      <mat-select [formControl]="userTypeControl">
+        <mat-option
+          *ngFor="let userType of userTypeOptions"
+          [value]="userType[1]"
+        >
+          {{ userType[0] }}
+        </mat-option>
+      </mat-select>
+      <mat-error>{{
+        userTypeControl.errors | formControlErrorMessages
+      }}</mat-error>
+    </mat-form-field>
+    <button
+      mat-flat-button
+      color="primary"
+      class="custom-btn btn"
+      (click)="handleSignUp()"
+    >
+      Registrarme
+    </button>
+  </form>
+</div>

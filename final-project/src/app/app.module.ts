@@ -9,10 +9,11 @@ import { StudentsModule } from './students/students.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { FooterComponent } from './footer/footer.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
-import { LoginModule } from './login/login.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,11 @@ import { LoginModule } from './login/login.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatSidenavModule,
     StudentsModule,
     MatToolbarModule,
     MatIconModule,
-    LoginModule,
+    AuthModule,
   ],
   providers: [
     {
