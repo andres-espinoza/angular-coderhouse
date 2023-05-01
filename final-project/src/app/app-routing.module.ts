@@ -1,18 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentsViewComponent } from './students/feature/students-view/students-view.component';
-import { SignInFormComponent } from './login/feature/sign-in-form/sign-In-form.component';
+import { SignInFormComponent } from './auth/feature/sign-in-form/sign-In-form.component';
 import { AuthGuard } from './core/auth/auth.guard';
+import { SignUpFormComponent } from './auth/feature/sign-up-form/sign-up-form.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SignInFormComponent,
+    component: StudentsViewComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'estudiantes',
     component: StudentsViewComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'inicio-de-sesion',
+    component: SignInFormComponent,
+  },
+  {
+    path: 'registro-de-usuario',
+    component: SignUpFormComponent,
   },
 ];
 
