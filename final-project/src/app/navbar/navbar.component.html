@@ -7,7 +7,18 @@
   <button
     mat-icon-button
     class="menu-button"
+    (click)="handleOpenSideNav()"
   >
     <mat-icon class="primary-color">menu</mat-icon>
   </button>
 </mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer
+    mode="side"
+    [opened]="openSideNav"
+    >Drawer content
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>
