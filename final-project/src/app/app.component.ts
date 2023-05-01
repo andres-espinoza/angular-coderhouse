@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './core/auth/auth.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'final-project';
+  isAuthenticated$ = this.authService
+    .appUserObservable()
+    .pipe(map((user) => Boolean(user)));
+  constructor(private authService: AuthService) {}
 }
