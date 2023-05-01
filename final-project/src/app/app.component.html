@@ -1,5 +1,12 @@
-<app-navbar />
-<app-main-container>
-  <router-outlet />
-  <app-footer />
-</app-main-container>
+<app-navbar *ngIf="isAuthenticated$ | async as boolean; else Login">
+  <app-main-container>
+    <router-outlet />
+    <app-footer />
+  </app-main-container>
+</app-navbar>
+<ng-template #Login>
+  <app-main-container>
+    <router-outlet />
+    <app-footer />
+  </app-main-container>
+</ng-template>
