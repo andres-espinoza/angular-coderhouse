@@ -6,13 +6,13 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class GuestGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(
@@ -23,12 +23,6 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    this.authService.recoverSession();
-    return this.authService.appUserObservable().pipe(
-      map((user) => {
-        if (!user) return this.router.createUrlTree(['inicio-de-sesion']);
-        return true;
-      })
-    );
+    return true;
   }
 }
