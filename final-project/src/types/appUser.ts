@@ -1,7 +1,4 @@
-enum UserType {
-  User = 1,
-  Admin,
-}
+import { UserType } from './userType';
 
 export interface AppUser {
   userName: string;
