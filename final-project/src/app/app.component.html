@@ -1,12 +1,14 @@
-<app-navbar *ngIf="isAuthenticated$ | async as boolean; else Login">
+<app-navbar *ngIf="isAuthenticated$ | async as boolean; else AuthSection">
   <app-main-container>
     <router-outlet />
     <app-footer />
   </app-main-container>
 </app-navbar>
-<ng-template #Login>
-  <app-main-container>
-    <router-outlet />
-    <app-footer />
-  </app-main-container>
+<ng-template #AuthSection>
+  <div style="margin-top: 2rem">
+    <app-main-container>
+      <router-outlet />
+    </app-main-container>
+  </div>
+  <app-footer />
 </ng-template>

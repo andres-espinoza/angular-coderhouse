@@ -42,3 +42,19 @@
     margin: 0px;
   }
 }
+
+.app-drawer-wrapper {
+  overflow-x: hidden;
+}
+
+.app-drawer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.app-drawer-content {
+  overflow-x: hidden;
+}
