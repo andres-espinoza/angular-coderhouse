@@ -14,6 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { AuthModule } from './auth/auth.module';
+import { CoursesModule } from './courses/courses.module';
+import { EnrollmentModule } from './enrollment/enrollment.module';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { AuthModule } from './auth/auth.module';
     BrowserAnimationsModule,
     HttpClientModule,
     MatSidenavModule,
+    MatButtonModule,
     StudentsModule,
+    CoursesModule,
+    EnrollmentModule,
     MatToolbarModule,
     MatIconModule,
     AuthModule,
