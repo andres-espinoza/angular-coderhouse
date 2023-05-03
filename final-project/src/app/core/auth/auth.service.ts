@@ -58,7 +58,10 @@ export class AuthService {
 
   setSession(user: AppUser | null): Response {
     try {
-      localStorage.setItem(this.currentSessionKey, JSON.stringify(user));
+      if (!user) localStorage.removeItem(this.currentSessionKey);
+      else {
+        localStorage.setItem(this.currentSessionKey, JSON.stringify(user));
+      }
       return { success: true };
     } catch (error) {
       console.error('An Error ocurred setting session', error);
@@ -75,7 +78,7 @@ export class AuthService {
       if (storagedValue) {
         lastUser = JSON.parse(storagedValue);
       }
-      this.appUser$.next(lastUser);
+      lastUser && this.appUser$.next(lastUser);
       return lastUser;
     } catch (error) {
       console.error('An error ocurred recovering session: ', error);
@@ -105,15 +108,10 @@ export class AuthService {
   }
 
   logout(): void {
-    this.setSession(null);
-    this.appUser$.next(null);
+    this.setSession(null).success && this.appUser$.next(null);
   }
 
   appUserObservable(): Observable<AppUser | null> {
     return this.appUser$.asObservable();
-  }
-
-  appUser(): AppUser | null {
-    return this.appUser$.value;
   }
 }

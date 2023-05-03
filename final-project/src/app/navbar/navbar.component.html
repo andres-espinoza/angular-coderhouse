@@ -1,9 +1,4 @@
 <mat-toolbar class="navbar">
-  <h3 class="mat-subtitle-1 navbar-text">
-    <span class="accent-color"
-      ><span class="salt-3">d</span>i<span class="salt-2">a</span></span
-    >
-  </h3>
   <button
     mat-icon-button
     class="menu-button"
@@ -11,6 +6,21 @@
   >
     <mat-icon class="primary-color">menu</mat-icon>
   </button>
+  <h3 class="mat-subtitle-1 navbar-text">
+    <span class="accent-color"
+      ><span class="salt-3">d</span>i<span class="salt-2">a</span></span
+    >
+  </h3>
+  <div class="btn-container">
+    <button
+      mat-button
+      color="warn"
+      type="button"
+      (click)="handleLogout()"
+    >
+      Cerrar sesión
+    </button>
+  </div>
 </mat-toolbar>
 <mat-drawer-container class="app-drawer-wrapper">
   <mat-drawer
@@ -21,6 +31,8 @@
     <nav>
       <a routerLink="/">Inicio</a>
       <a routerLink="/estudiantes">Estudiantes</a>
+      <a routerLink="/cursos">Cursos</a>
+      <a routerLink="/inscripciones">Inscripciones</a>
     </nav>
   </mat-drawer>
   <mat-drawer-content class="app-drawer-content">
