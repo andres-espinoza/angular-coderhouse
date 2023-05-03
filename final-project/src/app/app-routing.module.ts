@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'registro-de-usuario',
     component: SignUpFormComponent,
   },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
